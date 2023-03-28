@@ -26,10 +26,13 @@ public class MyArraysInt {
 	}
 	
 	public static int[] insertNumber(int [] array, int index, int num) {
-		 int[] result = new int[array.length + 1];
+		int[] result = array;
+		if (index >=0 && index <= array.length) {
+		 result = new int[array.length + 1];
 	        System.arraycopy(array, 0, result, 0, index);
 	        result[index] = num;
 	        System.arraycopy(array, index, result, index + 1, array.length - index);
+		}
 	        return result;
 	}
 	
